@@ -7,6 +7,7 @@ zBot = {
     },
     main: function () {
 	console.log( this.getEnemies() );
+	this.sleep( 1000 )
     },
     getEnemies: function () {
 	var enemies = [];
@@ -33,6 +34,21 @@ zBot = {
     },
     getPlayerShip: function() {
 	return ig.game.entities[ ig.game.entities.length -1 ];
+    },
+    sleep = function ( naptime ){
+	// From http://www.ozzu.com/programming-forum/javascript-sleep-function-t66049.html
+        naptime = naptime * 1000;
+        var sleeping = true;
+        var now = new Date();
+        var alarm;
+        var startingMSeconds = now.getTime();
+        alert("starting nap at timestamp: " + startingMSeconds + "\nWill sleep for: " + naptime + " ms");
+        while(sleeping){
+            alarm = new Date();
+            alarmMSeconds = alarm.getTime();
+            if(alarmMSeconds - startingMSeconds > naptime){ sleeping = false; }
+        }        
+        alert("Wakeup!");
     }
 };
 zBot.init()
