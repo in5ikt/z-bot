@@ -1,13 +1,13 @@
 zBot = {
     init: function () {
 	this.setupPlayerShipLogicArmour();
-//	while ( true ) {
-	    this.main();
-//	}
+	this.mainThreadId = setInterval(this.main, 1000);
     },
+    stop: function () {
+	clearInterval( this.mainThreadId );
+    }
     main: function () {
 	this.getEnemies()[0].kill();
-	this.sleep( 1000 )
     },
     getEnemies: function () {
 	var enemyShips = [];
@@ -57,6 +57,3 @@ zBot = {
     }
 };
 zBot.init()
-
-
-console.log( ig.game.entities[0].pos.x, ig.game.entities[0].pos.y )
