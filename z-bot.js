@@ -16,7 +16,7 @@ zBot = {
 	    }
 	}
 	return enemies;
-    }
+    },
     setupPlayerShipLogicArmour: function () {
 	zBot.playerShip = this.getPlayerShip();
 	zBot.playerShip.reallyKill = this.playerShip.kill;
