@@ -17,6 +17,7 @@ zBot = {
 	    }
 	}
 	enemyShips = enemyShips.sort( function ( a, b ) {
+	    console.log(a, b);
 	    return b.pos.y - a.pos.y;
 	} );
 	return enemyShips;
