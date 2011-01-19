@@ -12,7 +12,7 @@ zBot = {
     getEnemies: function () {
 	var enemyShips = [];
 	for ( i in ig.game.entities ) {
-	    if ( ! ig.game.entities[ i ].isPlayerShip ) {
+	    if ( 'object' == typeof ig.game.entities[ i ] && ! ig.game.entities[ i ].isPlayerShip ) {
 		enemyShips.push( ig.game.entities[ i ] );
 	    }
 	}
