@@ -1,9 +1,9 @@
 zBot = {
     init: function () {
 	this.setupPlayerShipLogicArmour();
-	while ( true ) {
+//	while ( true ) {
 	    this.main();
-	}
+//	}
     },
     main: function () {
 	console.log( this.getEnemies() );
