@@ -6,17 +6,20 @@ zBot = {
 //	}
     },
     main: function () {
-	console.log( this.getEnemies() );
+	this.getEnemies()[0].kill();
 	this.sleep( 1000 )
     },
     getEnemies: function () {
-	var enemies = [];
+	var enemyShips = [];
 	for ( i in ig.game.entities ) {
 	    if ( ! ig.game.entities[ i ].isPlayerShip ) {
-		enemies.push( ig.game.entities[ i ] );
+		enemyShips.push( ig.game.entities[ i ] );
 	    }
 	}
-	return enemies;
+	enemyShips = enemyShips.sort( function ( a, b ) {
+	    return b.pos.y - a.pos.y;
+	}
+	return enemyShips;
     },
     setupPlayerShipLogicArmour: function () {
 	zBot.playerShip = this.getPlayerShip();
