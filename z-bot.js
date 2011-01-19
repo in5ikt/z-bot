@@ -8,7 +8,10 @@ zBot = {
     },
     main: function () {
 	// This runs in the window scope
-	zBot.getEnemies()[0].kill();
+	var enemyShips = zBot.getEnemies();
+	if ( enemyShips.length ) {
+	    enemyShips[0].kill()
+	}
     },
     getEnemies: function () {
 	var enemyShips = [];
