@@ -5,7 +5,7 @@ zBot = {
     },
     stop: function () {
 	clearInterval( this.mainThreadId );
-    }
+    },
     main: function () {
 	this.getEnemies()[0].kill();
     },
