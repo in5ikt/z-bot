@@ -35,7 +35,7 @@ zBot = {
     getPlayerShip: function() {
 	return ig.game.entities[ ig.game.entities.length -1 ];
     },
-    sleep = function ( naptime ){
+    sleep: function ( naptime ){
 	// From http://www.ozzu.com/programming-forum/javascript-sleep-function-t66049.html
         naptime = naptime * 1000;
         var sleeping = true;
