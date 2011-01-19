@@ -18,7 +18,7 @@ zBot = {
 	}
 	enemyShips = enemyShips.sort( function ( a, b ) {
 	    return b.pos.y - a.pos.y;
-	}
+	} );
 	return enemyShips;
     },
     setupPlayerShipLogicArmour: function () {
