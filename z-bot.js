@@ -21,8 +21,8 @@ zBot = {
 	    }
 	}
 	enemyShips = enemyShips.sort( function ( a, b ) {
-	    console.log(a, b);
-	    console.log( typeof a, typeof b );
+	    //console.log(a, b);
+	    //console.log( typeof a, typeof b );
 	    return b.pos.y - a.pos.y;
 	} );
 	return enemyShips;
