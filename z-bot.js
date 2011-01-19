@@ -7,7 +7,8 @@ zBot = {
 	clearInterval( this.mainThreadId );
     },
     main: function () {
-	this.getEnemies()[0].kill();
+	// This runs in the window scope
+	zBot.getEnemies()[0].kill();
     },
     getEnemies: function () {
 	var enemyShips = [];
