@@ -4,20 +4,33 @@
  * @author in5ikt <http://github.com/in5ikt>
  */
 zBot = {
+    /*
+     * START ZE BÖÖÖT!
+     */
     init: function () {
 	this.setupPlayerShipLogicArmour();
 	this.mainThreadId = setInterval(this.main, 1000);
     },
+    /*
+     * Stops the execution of the zBot.main() function
+     */
     stop: function () {
 	clearInterval( this.mainThreadId );
     },
+    /*
+     * Main function, runs every Nth millisecond
+     */
     main: function () {
 	// This runs in the window scope
 	var enemyShips = zBot.getEnemies();
 	if ( enemyShips.length ) {
+	    // Kill nearest ship
 	    enemyShips[0].kill()
 	}
     },
+    /*
+     * Returns visible enemy entities ordered by position on canvas, most urgent-to-kill enemy first.
+     */
     getEnemies: function () {
 	var enemyShips = [];
 	for ( i in ig.game.entities ) {
@@ -32,6 +45,9 @@ zBot = {
 	} );
 	return enemyShips;
     },
+    /*
+     * Makes the player ship unkillable
+     */
     setupPlayerShipLogicArmour: function () {
 	zBot.playerShip = this.getPlayerShip();
 	zBot.playerShip.reallyKill = this.playerShip.kill;
@@ -46,9 +62,15 @@ zBot = {
 	//this.playerShip.target();
 	this.playerShip.isPlayerShip = true;
     },
+    /*
+     * Return player ship game entitiy
+     */
     getPlayerShip: function() {
 	return ig.game.entities[ ig.game.entities.length -1 ];
     },
+    /*
+     * A sleep() function, discarded in favor of setInterval
+     */
     sleep: function ( naptime ){
 	// From http://www.ozzu.com/programming-forum/javascript-sleep-function-t66049.html
         // Naptime is milliseconds // naptime = naptime * 1000;
