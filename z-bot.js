@@ -28,6 +28,10 @@ zBot = {
 	    enemyShips[0].kill()
 	}
     },
+    attackEnemy: function () {
+	var nearestEnemy = this.getEnemies().pop()
+	console.log( nearestEnemy )
+    },,
     /*
      * Returns visible enemy entities ordered by position on canvas, most urgent-to-kill enemy first.
      */
