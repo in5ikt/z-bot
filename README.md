@@ -4,7 +4,7 @@ Z-Bot is a simple JavaScript that hooks into the [Z-Type](http://www.phoboslab.o
 
 # Script injection scriptlet
 
-	javascript:var zBotScript=document.createElement('script');zBotScript.src='https://gist.github.com/raw/5aa5f32f38c6f0762380/z-bot.js';document.body.appendChild(zBotScript);
+	javascript:var zBotScript=document.createElement('script');zBotScript.src='https://github.com/in5ikt/z-bot/raw/master/z-bot.js';document.body.appendChild(zBotScript);
 
 # Known issues
 
