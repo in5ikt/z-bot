@@ -1,3 +1,6 @@
+/*
+ * @author in5ikt <http://github.com/in5ikt>
+ */
 zBot = {
     init: function () {
 	this.setupPlayerShipLogicArmour();
