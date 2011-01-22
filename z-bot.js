@@ -25,12 +25,20 @@ zBot = {
 	var enemyShips = zBot.getEnemies();
 	if ( enemyShips.length ) {
 	    // Kill nearest ship
-	    enemyShips[0].kill()
+	    attackEnemy();
+//	    enemyShips[0].kill()
 	}
     },
     attackEnemy: function () {
-	var nearestEnemy = this.getEnemies().pop()
-	console.log( nearestEnemy )
+	ig.game.backupKeydown = ig.game.keydown;
+	ig.game.keydown = function ( event ) {
+	    console.log( event ) ;
+	    this.backupKeydown( event );
+	};
+	var nearestEnemy = this.getEnemies().pop();
+	var char = nearestEnemy.remainingWord.split('')[0]
+	console.log( nearestEnemy, char );
+	ig.game.keydown( { keyCode: ig.KEY[char.toUpperCase()], target: {}, which: ig.KEY[char.toUpperCase()], stopPropagation: function () {}, preventDefault: function () {} } );
     },
     /*
      * Returns visible enemy entities ordered by position on canvas, most urgent-to-kill enemy first.
