@@ -48,7 +48,8 @@ zBot = {
     getEnemies: function () {
 	var enemyShips = [];
 	for ( i in ig.game.entities ) {
-	    if ( 'object' == typeof ig.game.entities[ i ] && ! ig.game.entities[ i ].isPlayerShip && ig.game.entities[ i ].remainingWord.length ) {
+
+	    if ( 'object' == typeof ig.game.entities[ i ] && ! ig.game.entities[ i ].isPlayerShip && ig.game.entities[ i ].remain) {
 		enemyShips.push( ig.game.entities[ i ] );
 	    }
 	}
