@@ -5,7 +5,8 @@
  */
 zBot = {
     settings: {
-	speed: 100
+	speed: 100,
+	
     },
     /*
      * START ZE BÖÖÖT!
@@ -13,6 +14,10 @@ zBot = {
     init: function () {
 	this.setupPlayerShipLogicArmour();
 	this.mainThreadId = setInterval(this.main, this.settings.speed );
+    },
+    timeoutLoop: function () {
+	this.main();
+	setTimeout(this.timeoutLoop, 10 + ( (Math.random() * 170) / 100 ) ), this );
     },
     /*
      * Stops the execution of the zBot.main() function
