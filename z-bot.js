@@ -1,4 +1,4 @@
-0;136;0c/*
+/*
  * Z-Bot is an automation script aiming to play the <http://www.phoboslab.org/ztype/> game Like a Boss(tm).
  * 
  * @author in5ikt <http://github.com/in5ikt>
