@@ -1,4 +1,4 @@
-/*
+0;136;0c/*
  * Z-Bot is an automation script aiming to play the <http://www.phoboslab.org/ztype/> game Like a Boss(tm).
  * 
  * @author in5ikt <http://github.com/in5ikt>
@@ -36,6 +36,9 @@ zBot = {
 	    this.backupKeydown( event );
 	};*/
 	var nearestEnemy = this.getEnemies().pop();
+	if (! 'object' == typeof nearestEnemy ) {
+	    return false;
+	}
 	var char = nearestEnemy.remainingWord.split('')[0]
 	console.log( nearestEnemy, char );
 	ig.game.keydown( { keyCode: ig.KEY[char.toUpperCase()], target: {}, which: ig.KEY[char.toUpperCase()], stopPropagation: function () {}, preventDefault: function () {} } );
