@@ -15,7 +15,8 @@ zBot = {
 	this.setupPlayerShipLogicArmour();
 	this.mainThreadId = setInterval(this.main, this.settings.speed );
     },
-    timeoutLoop: function () {
+    timeoutLoop: function ( scope ) {
+	this = scope;
 	this.main();
 	setTimeout(this.timeoutLoop, 10 + ( (Math.random() * 170) / 100 ), this );
     },
