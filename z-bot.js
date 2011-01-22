@@ -6,7 +6,7 @@
 zBot = {
     settings: {
 	speed: 100,
-	safeRegion: 40,
+	safeRegion: 100,
     },
     /*
      * START ZE BÖÖÖT!
@@ -54,12 +54,12 @@ zBot = {
 	if ( ! 'object' == typeof nearestEnemy ) {
 	    return false;
 	}
-	if ( this.activeTarget && this.activeTarget.remainingWord.length == 0 ) {
-	    this.activeTarget = undefined;
+	if ( window.zBot.activeTarget && window.zBot.activeTarget.remainingWord.length == 0 ) {
+	    window.zBot.activeTarget = undefined;
 	} else {
-	    this.activeTarget = nearestEnemy;
+	    window.zBot.activeTarget = nearestEnemy;
 	
-	    var char = this.activeTarget.remainingWord.split('')[0]
+	    var char = window.zBot.activeTarget.remainingWord.split('')[0]
 	    console.log( nearestEnemy, char );
 	    ig.game.keydown( { keyCode: ig.KEY[char.toUpperCase()], target: {}, which: ig.KEY[char.toUpperCase()], stopPropagation: function () {}, preventDefault: function () {} } );
 	}
@@ -123,4 +123,5 @@ zBot = {
         console.log("Wake up!");
     }
 };
+window.zBot = zBot;
 zBot.init()
