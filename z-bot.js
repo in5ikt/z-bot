@@ -54,7 +54,7 @@ zBot = {
 	if ( ! 'object' == typeof nearestEnemy ) {
 	    return false;
 	}
-	if ( nearestEnemy.remainingWord.length == 0 ) {
+	if ( this.activeTarget && this.activeTarget.remainingWord.length == 0 ) {
 	    this.activeTarget = undefined;
 	} else {
 	    this.activeTarget = nearestEnemy;
