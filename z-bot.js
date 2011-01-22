@@ -62,7 +62,7 @@ zBot = {
 	var char = nearestEnemy.remainingWord.split('')[0]
 	console.log( nearestEnemy, char );
 	ig.game.keydown( { keyCode: ig.KEY[char.toUpperCase()], target: {}, which: ig.KEY[char.toUpperCase()], stopPropagation: function () {}, preventDefault: function () {} } );
-	if ( nea    },
+    },
     /*
      * Returns visible enemy entities ordered by position on canvas, most urgent-to-kill enemy first.
      */
