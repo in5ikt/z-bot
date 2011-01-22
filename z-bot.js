@@ -6,7 +6,7 @@
 zBot = {
     settings: {
 	speed: 100,
-	safeRegion: 100,
+	safeRegion: 40,
     },
     /*
      * START ZE BÖÖÖT!
