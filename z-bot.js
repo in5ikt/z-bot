@@ -29,12 +29,12 @@ zBot = {
 //	    enemyShips[0].kill()
 	}
     },
-    attackEnemy: function () {
+    attackEnemy: function () {/*
 	ig.game.backupKeydown = ig.game.keydown;
 	ig.game.keydown = function ( event ) {
 	    console.log( event ) ;
 	    this.backupKeydown( event );
-	};
+	};*/
 	var nearestEnemy = this.getEnemies().pop();
 	var char = nearestEnemy.remainingWord.split('')[0]
 	console.log( nearestEnemy, char );
