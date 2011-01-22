@@ -25,7 +25,7 @@ zBot = {
 	var enemyShips = zBot.getEnemies();
 	if ( enemyShips.length ) {
 	    // Kill nearest ship
-	    attackEnemy();
+	    zBot.attackEnemy();
 //	    enemyShips[0].kill()
 	}
     },
