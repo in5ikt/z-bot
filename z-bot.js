@@ -9,7 +9,7 @@ zBot = {
      */
     init: function () {
 	this.setupPlayerShipLogicArmour();
-	this.mainThreadId = setInterval(this.main, 10);
+	this.mainThreadId = setInterval(this.main, 100);
     },
     /*
      * Stops the execution of the zBot.main() function
@@ -26,7 +26,6 @@ zBot = {
 	if ( enemyShips.length ) {
 	    // Kill nearest ship
 	    zBot.attackEnemy();
-//	    enemyShips[0].kill()
 	}
     },
     attackEnemy: function () {/*
