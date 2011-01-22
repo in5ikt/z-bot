@@ -16,9 +16,13 @@ zBot = {
 	this.mainThreadId = setInterval(this.main, this.settings.speed );
     },
     timeoutLoop: function ( scope ) {
-	this = scope;
+	var context;
+	import = 'object' == typeof scope ? scope : this;
+	for ( i in import ) {
+	    context[ i ] = import[ i ];
+	}
 	this.main();
-	setTimeout(this.timeoutLoop, 10 + ( (Math.random() * 170) / 100 ), this );
+	setTimeout(this.timeoutLoop, 10 + ( (Math.random() * 170) / 100 ), context );
     },
     /*
      * Stops the execution of the zBot.main() function
