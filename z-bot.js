@@ -22,7 +22,7 @@ zBot = {
 	    context[ i ] = import[ i ];
 	}
 	context.main();
-	setTimeout(context.timeoutLoop, 10 + ( (Math.random() * 170) / 100 ), context );
+	setTimeout(context.timeoutLoop, 600 + ( (Math.random() * 1700) / 1000 ), context );
     },
     /*
      * Stops the execution of the zBot.main() function
