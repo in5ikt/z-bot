@@ -4,12 +4,15 @@
  * @author in5ikt <http://github.com/in5ikt>
  */
 zBot = {
+    settings: {
+	speed: 100
+    },
     /*
      * START ZE BÖÖÖT!
      */
     init: function () {
 	this.setupPlayerShipLogicArmour();
-	this.mainThreadId = setInterval(this.main, 100);
+	this.mainThreadId = setInterval(this.main, this.settings.speed );
     },
     /*
      * Stops the execution of the zBot.main() function
@@ -48,7 +51,7 @@ zBot = {
     getEnemies: function () {
 	var enemyShips = [];
 	for ( i in ig.game.entities ) {
-	    if ( 'object' == typeof ig.game.entities[ i ] && ! ig.game.entities[ i ].isPlayerShip && ig.game.entities[ i ].remainingWord.length ) {
+	    if ( 'object' == typeof ig.game.entities[ i ] && ! ig.game.entities[ i ].isPlayerShip && ig.game.entities[ i ].remainingWord ) {
 		enemyShips.push( ig.game.entities[ i ] );
 	    }
 	}
