@@ -54,14 +54,15 @@ zBot = {
 	if ( ! 'object' == typeof nearestEnemy ) {
 	    return false;
 	}
-	if ( nearestEnemy.remainingWord.length == 1 ) {
+	if ( nearestEnemy.remainingWord.length == 0 ) {
 	    this.activeTarget = undefined;
 	} else {
 	    this.activeTarget = nearestEnemy;
+	
+	    var char = this.activeTarget.remainingWord.split('')[0]
+	    console.log( nearestEnemy, char );
+	    ig.game.keydown( { keyCode: ig.KEY[char.toUpperCase()], target: {}, which: ig.KEY[char.toUpperCase()], stopPropagation: function () {}, preventDefault: function () {} } );
 	}
-	var char = this.activeTarget.remainingWord.split('')[0]
-	console.log( nearestEnemy, char );
-	ig.game.keydown( { keyCode: ig.KEY[char.toUpperCase()], target: {}, which: ig.KEY[char.toUpperCase()], stopPropagation: function () {}, preventDefault: function () {} } );
     },
     /*
      * Returns visible enemy entities ordered by position on canvas, most urgent-to-kill enemy first.
