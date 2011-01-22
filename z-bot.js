@@ -37,8 +37,8 @@ zBot = {
 	    console.log( event ) ;
 	    this.backupKeydown( event );
 	};*/
-	var nearestEnemy = this.getEnemies().pop();
-	if (! 'object' == typeof nearestEnemy ) {
+	var nearestEnemy = this.getEnemies().shift();
+	if ( ! 'object' == typeof nearestEnemy ) {
 	    return false;
 	}
 	var char = nearestEnemy.remainingWord.split('')[0]
