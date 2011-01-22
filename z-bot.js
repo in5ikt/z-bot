@@ -17,7 +17,7 @@ zBot = {
     },
     timeoutLoop: function () {
 	this.main();
-	setTimeout(this.timeoutLoop, 10 + ( (Math.random() * 170) / 100 ) ), this );
+	setTimeout(this.timeoutLoop, 10 + ( (Math.random() * 170) / 100 ), this );
     },
     /*
      * Stops the execution of the zBot.main() function
