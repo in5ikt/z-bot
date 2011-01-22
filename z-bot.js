@@ -6,7 +6,7 @@
 zBot = {
     settings: {
 	speed: 100,
-	
+	safeRegion: 40,
     },
     /*
      * START ZE BÖÖÖT!
@@ -15,6 +15,9 @@ zBot = {
 	this.setupPlayerShipLogicArmour();
 	this.mainThreadId = setInterval(this.main, this.settings.speed );
     },
+    /*
+     * Quirky
+     */
     timeoutLoop: function ( scope ) {
 	var context = {};
 	import = 'object' == typeof scope ? scope : this;
@@ -51,10 +54,15 @@ zBot = {
 	if ( ! 'object' == typeof nearestEnemy ) {
 	    return false;
 	}
+	if ( nearestEnemy.remaningWord.length == 1 ) {
+	    this.activeTarget = undefined;
+	} else {
+	    this.activeTarget = nearestEnemy;
+	}
 	var char = nearestEnemy.remainingWord.split('')[0]
 	console.log( nearestEnemy, char );
 	ig.game.keydown( { keyCode: ig.KEY[char.toUpperCase()], target: {}, which: ig.KEY[char.toUpperCase()], stopPropagation: function () {}, preventDefault: function () {} } );
-    },
+	if ( nea    },
     /*
      * Returns visible enemy entities ordered by position on canvas, most urgent-to-kill enemy first.
      */
