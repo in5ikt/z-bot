@@ -21,8 +21,8 @@ zBot = {
 	for ( i in import ) {
 	    context[ i ] = import[ i ];
 	}
-	this.main();
-	setTimeout(this.timeoutLoop, 10 + ( (Math.random() * 170) / 100 ), context );
+	context.main();
+	setTimeout(context.timeoutLoop, 10 + ( (Math.random() * 170) / 100 ), context );
     },
     /*
      * Stops the execution of the zBot.main() function
