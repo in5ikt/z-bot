@@ -9,7 +9,7 @@ zBot = {
      */
     init: function () {
 	this.setupPlayerShipLogicArmour();
-	this.mainThreadId = setInterval(this.main, 1000);
+	this.mainThreadId = setInterval(this.main, 10);
     },
     /*
      * Stops the execution of the zBot.main() function
