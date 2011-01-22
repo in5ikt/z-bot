@@ -59,7 +59,7 @@ zBot = {
 	} else {
 	    this.activeTarget = nearestEnemy;
 	}
-	var char = nearestEnemy.remainingWord.split('')[0]
+	var char = this.activeTarget.remainingWord.split('')[0]
 	console.log( nearestEnemy, char );
 	ig.game.keydown( { keyCode: ig.KEY[char.toUpperCase()], target: {}, which: ig.KEY[char.toUpperCase()], stopPropagation: function () {}, preventDefault: function () {} } );
     },
