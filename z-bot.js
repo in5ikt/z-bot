@@ -69,7 +69,7 @@ zBot = {
     getEnemies: function () {
 	var enemyShips = [];
 	for ( i in ig.game.entities ) {
-	    if ( 'object' == typeof ig.game.entities[ i ] && ! ig.game.entities[ i ].isPlayerShip && ig.game.entities[ i ].remainingWord ) {
+	    if ( 'object' == typeof ig.game.entities[ i ] && ! ig.game.entities[ i ].isPlayerShip && ig.game.entities[ i ].remainingWord && ig.game.entities[ i ].pos.y > this.settings.safeRegion ) {
 		enemyShips.push( ig.game.entities[ i ] );
 	    }
 	}
